@@ -70,6 +70,27 @@ A composable pattern for building **plug-and-play prompt blocks** — great for 
 
 ---
 
+## 🧠 Advanced Meta-Prompt Library
+
+Each of the following prompt styles comes with its own `.md` and `-ReadMe.md` file inside the `/frameworks/` folder, providing structure, flow, and real examples.
+
+| Name               | Description                                             |
+| ------------------ | ------------------------------------------------------- |
+| `Prompter-RSIP`    | Role-Structure-Intent-Purpose for concise, scoped tasks |
+| `Prompter-ToT`     | Tree-of-Thought reasoning to branch ideas recursively   |
+| `Prompter-ReAct`   | Reasoning + Acting hybrid prompts with tool hooks       |
+| `Prompter-CoT`     | Chain-of-Thought step-by-step reasoning prompts         |
+| `Prompter-Lazy`    | One-liner prompts designed for maximal model freedom    |
+| `Prompter-Agent`   | Modular agent prompting blueprint with behavior configs |
+| `Prompter-Reflect` | Iterative self-reviewing prompt cycles for improvement  |
+| `Prompter-PHP`     | Prompt Hooks Protocol — injection-ready prompt wrappers |
+| `Prompter-Compose` | Prompt composability pattern for nesting & flow         |
+| `Prompter-Persona` | Persona-driven prompts to guide behavior + tone         |
+
+All files follow the `Prompter-XXXX.md` + `Prompter-XXXX-ReadMe.md` format for easy use and git-friendly integration.
+
+---
+
 ## 🚀 Use Cases
 
 * AI agents & co-pilots
@@ -77,6 +98,34 @@ A composable pattern for building **plug-and-play prompt blocks** — great for 
 * Context-rich automation systems
 * Developer tools & prompt chaining
 * Scalable knowledge assistants
+* 🧪 LLM behavior testing and iteration
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+📁 MetaPromptFramework/
+├── README.md
+├── LICENSE
+└── frameworks/
+    ├── Prompter-CRAFT.md
+    ├── Prompter-MCP.md
+    ├── Prompter-MODP.md
+    ├── Prompter-RSIP.md
+    ├── Prompter-ToT.md
+    ├── Prompter-ReAct.md
+    ├── Prompter-CoT.md
+    ├── Prompter-Lazy.md
+    ├── Prompter-Agent.md
+    ├── Prompter-Reflect.md
+    ├── Prompter-PHP.md
+    ├── Prompter-Compose.md
+    ├── Prompter-Persona.md
+    ├── Prompter-CRAFT-ReadMe.md
+    ├── Prompter-MCP-ReadMe.md
+    ├── ... (rest of ReadMe files)
+```
 
 ---
 
@@ -88,13 +137,6 @@ This project is licensed under the **MIT License**. See [`LICENSE`](./LICENSE) f
 
 ## 🙌 Acknowledgements
 
-* **Lawton Leams** – Original creator of the CRAFT prompt model [YouTube](https://youtu.be/ABCqfaTjNd4)
+* **Lawton Leams** – Creator of the CRAFT prompt model ([YouTube](https://youtu.be/ABCqfaTjNd4))
 * **Sathya** – Architect and maintainer of the MetaPromptFramework
-* **ChatGPT** – AI co-pilot for designing and documenting this framework
-
----
-
-> Fork it. Star it. Use it. Or just steal ideas like an artist — this repo’s built to be remixed. 😉
-
-````
-
+* **ChatGPT** – AI co-pilot for documenting and structuring this prompt framework journey

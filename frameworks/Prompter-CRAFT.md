@@ -18,7 +18,7 @@
 
 ## 📄 Template
 
-```plaintext
+
 You are an expert [ROLE] in [DOMAIN].  
 Your task is to [ACTION].  
 The context is: [CONTEXT].  
