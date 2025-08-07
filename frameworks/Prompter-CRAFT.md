@@ -6,20 +6,36 @@
 
 ---
 
-## 📐 C.R.A.F.T. Breakdown
+**CRAFT** is a structured prompt design method based on five key elements:
 
-- **C – Context**: Define the situation, background, and topic clearly.  
-- **R – Role**: Assign the LLM a specific expert persona or function.  
-- **A – Action**: Specify the task or step-by-step process to follow.  
-- **F – Format**: Clarify the desired output format (table, code, essay, etc.).  
-- **T – Target Audience**: Indicate who the output is intended for.  
+- **C**ontext: What background or situation must the AI know?
+- **R**ole: Who or what is the AI acting as?
+- **A**ction: What task must the AI perform?
+- **F**ormat: What should the output look like?
+- **T**arget Audience: Who is this response intended for?
 
 ---
 
-## 📄 Template
+## 🧠 Prompt Template
 
+You are an expert [ROLE] in [DOMAIN].
+Your task is to [ACTION].
+The context is: [CONTEXT].
+Please provide your response in [FORMAT] format, tailored for [TARGET].
 
-You are an expert [ROLE] in [DOMAIN].  
-Your task is to [ACTION].  
-The context is: [CONTEXT].  
-Please provide your response in [FORMAT] format, tailored for [TARGET AUDIENCE].
+---
+
+## 🧩 Use Cases
+
+- Structured content generation  
+- Email or business communication  
+- Instructional or educational responses  
+- Blog posts, technical writing, or summaries  
+- When clarity and scope control are required
+
+---
+
+## 🔄 Variations
+
+- You can exclude "Target Audience" for generalized outputs.  
+- Format can be a list, paragraph, table, JSON, markdown, etc.
