@@ -1,142 +1,146 @@
-# MetaPromptFramework
+# 🧩 MetaPromptFramework
 
-**MetaPromptFramework** is a curated collection of reusable, modular prompt engineering templates for building better, smarter, and more adaptable AI interactions. Designed for advanced users, AI builders, and automation engineers, this repo provides highly structured patterns for LLMs like OpenAI GPT-4, Claude, Gemini, and Mistral.
+**MetaPromptFramework** — a pragmatic, modular library of reusable prompt engineering templates and patterns for building reliable, composable, and production-ready LLM interactions. Built for AI builders, product teams, and engineers who want predictable LLM behavior fast.
 
-> ⚠️ Model-Agnostic: All frameworks are compatible across most modern LLMs that accept natural language prompts.
-
----
-
-## 🧱 Included Prompt Frameworks
-
-### 🧠 Prompter-CRAFT  
-A prompt design method focused on **Context**, **Role**, **Action**, **Format**, and **Target Audience**. Helps eliminate ambiguity while producing structured, purpose-driven prompts.  
-**Credit**: Based on the work of [Lawton Leams](https://youtu.be/ABCqfaTjNd4)
-
-**Usage Example**:
-```plaintext
-You are an expert [ROLE] in [DOMAIN].  
-Your task is to [ACTION].  
-The context is: [CONTEXT].  
-Please provide your response in [FORMAT] format, tailored for [TARGET AUDIENCE].
-````
+> **🤖 Model-agnostic:** Works with any modern LLM (OpenAI, Anthropic, Google, Mistral, etc.).
 
 ---
 
-### 📡 Prompter-MCP (Model Context Protocol)
+## ⚡ TL;DR
 
-Designed to give the model **layered context**, this protocol separates system roles, task logic, user goals, and response structure to guide complex LLM tasks.
+* **🎯 Goal:** Make it trivial to design, test, and reuse high‑quality prompts.
+* **🚀 Quick start:** Copy a template from `/frameworks/`, fill placeholders, send to your LLM.
+* **💡 Why:** Structured prompts = less iteration, fewer hallucinations, better scaling.
 
-**Usage Example**:
+---
 
-```plaintext
-### System Context
-You are acting as a [ROLE] to assist with [PROJECT/USE CASE].
+## 🧱 Frameworks Inside
 
-### Operational Directives
-- Follow [N] logical steps
-- Prioritize clarity and modularity
+* 📝 **Prompter-CRAFT** — Context / Role / Action / Format / Target Audience
+* 🛰️ **Prompter-MCP** — Layered system, user, directives
+* 🧩 **Prompter-MODP** — Modular blocks for reuse & chaining
+* 🔍 **Prompter-ReAct** — Reason + Action (tool agent pattern)
+* 🧠 **Prompter-CoT** — Chain-of-Thought reasoning
+* 🌳 **Prompter-ToT** — Tree-of-Thought exploration
+* 🤖 **Prompter-Agent** — Agent orchestration configs
+* 🔄 **Prompter-Reflect** — Self-review loops
+* 🎭 **Prompter-Persona** — Persona + tone control
+* ⚡ **RSIP, Lazy, Compose, PHP** — smaller focused patterns
 
-### User Intent
-The user wants: [GOAL STATEMENT]
+---
 
-### Response Meta
-Respond in [FORMAT]. Include [X] if relevant.
+## 🚀 Quick Start (60s)
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/sathya-py/metapromptframework
+cd metapromptframework
+```
+
+```python
+from pathlib import Path
+
+template = Path('frameworks/Prompter-CRAFT.md').read_text()
+
+prompt = (template
+    .replace('[ROLE]', 'Product Manager')
+    .replace('[DOMAIN]', 'SaaS billing')
+    .replace('[ACTION]', 'write a 1-page spec')
+    .replace('[CONTEXT]', 'customer confusion on invoices')
+    .replace('[FORMAT]', 'markdown')
+    .replace('[TARGET AUDIENCE]', 'engineering & design teams')
+)
+print(prompt)
 ```
 
 ---
 
-### 🔧 Prompter-MODP (Modular Prompt Design Protocol)
+## 🧭 Decision Guide
 
-A composable pattern for building **plug-and-play prompt blocks** — great for reuse, automation, and chaining LLM steps.
+| 🎯 Goal                           | 🛠️ Pattern   | 💡 Why                           |
+| --------------------------------- | ------------- | -------------------------------- |
+| 📄 Strictly formatted deliverable | CRAFT         | Role + format + audience clarity |
+| 🔍 Transparent reasoning          | CoT / ToT     | Step-by-step or branching logic  |
+| ⚙️ Tool/API calls                 | ReAct / Agent | Action + observation loops       |
+| 🧩 Pipeline building              | MODP          | Modular block composition        |
+| 🔄 Quality iteration              | Reflect       | Self-review improvement          |
+| 💡 Creative freedom               | Lazy          | Minimal constraints              |
 
-**Usage Example**:
+---
 
-```plaintext
-# INTENT
-[Describe the purpose clearly]
+## 📚 Example Gallery
 
-# INPUT
-[Insert data or background]
+### 📝 CRAFT — Persona Email Generator
 
-# TRANSFORM
-[Steps, logic, or structure]
+**Template:**
 
-# OUTPUT
-[Formatting & tone]
+```
+You are an expert [ROLE] in [DOMAIN].
+Your task is to [ACTION].
+Context: [CONTEXT]
+Provide output in [FORMAT] for [TARGET AUDIENCE].
+```
 
-# POSTOPS
-[Follow-ups, chaining, reuse notes]
+**Example Filled:**
+
+```
+You are an expert Product Marketer in SaaS billing...
 ```
 
 ---
 
-## 🧠 Advanced Meta-Prompt Library
+### 🔍 ReAct — Search Tool Agent
 
-Each of the following prompt styles comes with its own `.md` and `-ReadMe.md` file inside the `/frameworks/` folder, providing structure, flow, and real examples.
-
-| Name               | Description                                             |
-| ------------------ | ------------------------------------------------------- |
-| `Prompter-RSIP`    | Role-Structure-Intent-Purpose for concise, scoped tasks |
-| `Prompter-ToT`     | Tree-of-Thought reasoning to branch ideas recursively   |
-| `Prompter-ReAct`   | Reasoning + Acting hybrid prompts with tool hooks       |
-| `Prompter-CoT`     | Chain-of-Thought step-by-step reasoning prompts         |
-| `Prompter-Lazy`    | One-liner prompts designed for maximal model freedom    |
-| `Prompter-Agent`   | Modular agent prompting blueprint with behavior configs |
-| `Prompter-Reflect` | Iterative self-reviewing prompt cycles for improvement  |
-| `Prompter-PHP`     | Prompt Hooks Protocol — injection-ready prompt wrappers |
-| `Prompter-Compose` | Prompt composability pattern for nesting & flow         |
-| `Prompter-Persona` | Persona-driven prompts to guide behavior + tone         |
-
-All files follow the `Prompter-XXXX.md` + `Prompter-XXXX-ReadMe.md` format for easy use and git-friendly integration.
-
----
-
-## 🚀 Use Cases
-
-* AI agents & co-pilots
-* RAG-powered workflows
-* Context-rich automation systems
-* Developer tools & prompt chaining
-* Scalable knowledge assistants
-* 🧪 LLM behavior testing and iteration
-
----
-
-## 📂 Project Structure
-
-```plaintext
-📁 MetaPromptFramework/
-├── README.md
-├── LICENSE
-└── frameworks/
-    ├── Prompter-CRAFT.md
-    ├── Prompter-MCP.md
-    ├── Prompter-MODP.md
-    ├── Prompter-RSIP.md
-    ├── Prompter-ToT.md
-    ├── Prompter-ReAct.md
-    ├── Prompter-CoT.md
-    ├── Prompter-Lazy.md
-    ├── Prompter-Agent.md
-    ├── Prompter-Reflect.md
-    ├── Prompter-PHP.md
-    ├── Prompter-Compose.md
-    ├── Prompter-Persona.md
-    ├── Prompter-CRAFT-ReadMe.md
-    ├── Prompter-MCP-ReadMe.md
-    ├── ... (rest of ReadMe files)
+```
+System: You can use [search(query)], [fetch_url(url)].
+User: Find the migration guide for X and summarize.
 ```
 
 ---
 
-## 📄 License
+### 🧠 CoT — Complex Reasoning
 
-This project is licensed under the **MIT License**. See [`LICENSE`](./LICENSE) for details.
+```
+Explain your reasoning step-by-step, then give the answer.
+Question: [YOUR QUESTION]
+--
+Reasoning:
+1.
+2.
+3.
+Final Answer:
+```
+
+---
+
+## ✅ Best Practices
+
+* ⚠️ Validate outputs before using
+* 🛡️ Avoid PII in templates
+* 🔍 Log & instrument prompts for cost, latency, correctness
+* 📸 Snapshot test important templates
+
+---
+
+## 🛠️ Roadmap
+
+* 🎯 v0.1.0 — Initial stable set + examples
+* 📦 v0.2.0 — CLI renderer, pip module
+* 🧪 v1.0.0 — Stable API, docs site, CI tests
+
+---
+
+## 📜 License
+
+MIT — see `LICENSE`
 
 ---
 
 ## 🙌 Acknowledgements
 
-* **Lawton Leams** – Creator of the CRAFT prompt model ([YouTube](https://youtu.be/ABCqfaTjNd4))
-* **Sathya** – Architect and maintainer of the MetaPromptFramework
-* **ChatGPT** – AI co-pilot for documenting and structuring this prompt framework journey
+* Lawton Leams — CRAFT inspiration
+* Sathya — Project creator
+
+---
+
+**Last updated:** Suggested version v0.1.0
